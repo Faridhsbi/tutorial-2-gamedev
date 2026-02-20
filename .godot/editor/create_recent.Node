@@ -1,0 +1,13 @@
+CollisionPolygon2D
+TextEdit
+Button
+Panel
+ColorRect
+Label
+StaticBody2D
+Area2D
+CollisionShape2D
+Sprite2D
+Node2D
+Timer
+CharacterBody2D

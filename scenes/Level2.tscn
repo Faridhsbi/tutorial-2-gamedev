@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://depi8tt8nqdns"]
+
+[ext_resource type="Script" uid="uid://cgu42eip38in2" path="res://scenes/Level2Manager.gd" id="1_qwp14"]
+[ext_resource type="PackedScene" uid="uid://datfp8kxjrjg" path="res://scenes/BlueShip.tscn" id="2_qwp14"]
+[ext_resource type="PackedScene" uid="uid://dm4pvnxrbtxur" path="res://scenes/Back.tscn" id="2_v8268"]
+[ext_resource type="Script" uid="uid://wb7fdqw0f4v5" path="res://scenes/BottomBoundary.gd" id="3_xpq2v"]
+[ext_resource type="PackedScene" uid="uid://4dcae4gpc0p3" path="res://scenes/SnowPlatform.tscn" id="4_0jmjk"]
+[ext_resource type="Script" uid="uid://b0526180yf0t0" path="res://scenes/ObjectiveLevel2.gd" id="4_xpq2v"]
+[ext_resource type="PackedScene" uid="uid://bhuenfsqoxwpe" path="res://scenes/ObjectiveArea.tscn" id="5_v8268"]
+[ext_resource type="Script" uid="uid://dtjnhgrjbafyb" path="res://scenes/Player.gd" id="6_4p0dt"]
+[ext_resource type="PackedScene" uid="uid://b5a4ynav86ee6" path="res://scenes/Meteor.tscn" id="6_rcugv"]
+[ext_resource type="PackedScene" uid="uid://ef3kjbbn3qhl" path="res://scenes/GameOverScreen.tscn" id="9_v8268"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwp14"]
+size = Vector2(1756, 127)
+
+[node name="Level2" type="Node2D" unique_id=1621081983]
+script = ExtResource("1_qwp14")
+
+[node name="Background" parent="." unique_id=2087602968 instance=ExtResource("2_v8268")]
+
+[node name="GameOverScreen" parent="." unique_id=222017562 instance=ExtResource("9_v8268")]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 859.0
+offset_top = 518.0
+offset_right = 859.0
+offset_bottom = 518.0
+grow_vertical = 1
+
+[node name="PlatformSnow" type="Node2D" parent="." unique_id=346393150]
+
+[node name="SnowPlatform" parent="PlatformSnow" unique_id=1350858687 instance=ExtResource("4_0jmjk")]
+position = Vector2(-242, 845)
+scale = Vector2(2, 2)
+
+[node name="SnowPlatform3" parent="PlatformSnow" unique_id=350098691 instance=ExtResource("4_0jmjk")]
+position = Vector2(1438, 829)
+scale = Vector2(2, 2)
+
+[node name="PlatformSnow2" type="Node2D" parent="." unique_id=883863374]
+
+[node name="SnowPlatform" parent="PlatformSnow2" unique_id=170127585 instance=ExtResource("4_0jmjk")]
+position = Vector2(568, 142)
+rotation = 3.1415927
+scale = Vector2(2, 2)
+
+[node name="SnowPlatform2" parent="PlatformSnow2" unique_id=103869233 instance=ExtResource("4_0jmjk")]
+position = Vector2(1172, 141)
+rotation = 3.1415927
+scale = Vector2(2, 2)
+
+[node name="SnowPlatform3" parent="PlatformSnow2" unique_id=1496910349 instance=ExtResource("4_0jmjk")]
+position = Vector2(1773, 140)
+rotation = 3.1415927
+scale = Vector2(2, 2)
+
+[node name="ObjectiveArea" parent="." unique_id=1056304480 instance=ExtResource("5_v8268")]
+position = Vector2(1689, 455)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("4_xpq2v")
+
+[node name="Meteor" parent="." unique_id=1061646946 instance=ExtResource("6_rcugv")]
+position = Vector2(681, 336)
+is_falling = true
+
+[node name="BlueShip" parent="." unique_id=1604795049 instance=ExtResource("2_qwp14")]
+position = Vector2(58, 486)
+script = ExtResource("6_4p0dt")
+
+[node name="BottomBoundary" type="Area2D" parent="." unique_id=707973669]
+position = Vector2(17, 22)
+script = ExtResource("3_xpq2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBoundary" unique_id=798201919]
+position = Vector2(872, 973)
+shape = SubResource("RectangleShape2D_qwp14")
+
+[node name="Meteor2" parent="." unique_id=883162961 instance=ExtResource("6_rcugv")]
+position = Vector2(1116, 390.00003)
+scale = Vector2(1.2, 1.2)
+
+[node name="Meteor2" parent="Meteor2" unique_id=337091592 instance=ExtResource("6_rcugv")]
+position = Vector2(166.66666, 241.66666)
+scale = Vector2(1.2, 1.2)
+
+[connection signal="body_entered" from="BottomBoundary" to="BottomBoundary" method="_on_body_entered"]

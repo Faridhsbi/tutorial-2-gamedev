@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://datfp8kxjrjg"]
+[gd_scene format=3 uid="uid://datfp8kxjrjg"]
 
 [ext_resource type="Texture2D" uid="uid://dgrrg14sgp4f4" path="res://assets/playerShip1_blue.png" id="1"]
 
 [sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(100.011, 77.4256)
+size = Vector2(91, 77.4256)
 
-[node name="BlueShip" type="RigidBody2D"]
+[node name="BlueShip" type="RigidBody2D" unique_id=1604795049]
+rotation = 1.5707964
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1486318910]
 texture = ExtResource("1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1581589069]
+position = Vector2(-0.5, -3.5527137e-15)
 shape = SubResource("1")

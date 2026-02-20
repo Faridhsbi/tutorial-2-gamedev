@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://o7gsvh787ulo"]
+
+[ext_resource type="Script" uid="uid://w5olvoum8so8" path="res://scenes/MainMenu.gd" id="1_yqorp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukcvp"]
+bg_color = Color(0.015686275, 0.23137255, 0.57254905, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[node name="MainMenu" type="Control" unique_id=1211492570]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqorp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=37711836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2036809, 0.20368093, 0.2036809, 1)
+
+[node name="Panel" type="Panel" parent="." unique_id=1318900036]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.5
+offset_top = -120.5
+offset_right = 228.5
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ukcvp")
+
+[node name="Start" type="Button" parent="Panel" unique_id=369425911]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -48.5
+offset_right = 154.5
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Start"
+
+[node name="Exit" type="Button" parent="Panel" unique_id=424234382]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = 12.5
+offset_right = 156.5
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Exit"
+
+[connection signal="pressed" from="Panel/Start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]

@@ -3,31 +3,138 @@
 [ext_resource type="PackedScene" uid="uid://y5a4e3ajuy2r" path="res://scenes/StonePlatform.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://datfp8kxjrjg" path="res://scenes/BlueShip.tscn" id="2"]
 [ext_resource type="Script" uid="uid://bsuv2svmaqypq" path="res://scenes/PlatformBlue.gd" id="3"]
-[ext_resource type="Script" uid="uid://x2rdmjyr1ttw" path="res://scenes/ObjectiveArea.gd" id="4"]
+[ext_resource type="Script" uid="uid://dtjnhgrjbafyb" path="res://scenes/Player.gd" id="4_ykko5"]
+[ext_resource type="PackedScene" uid="uid://b5a4ynav86ee6" path="res://scenes/Meteor.tscn" id="6_xum0q"]
+[ext_resource type="Script" uid="uid://wb7fdqw0f4v5" path="res://scenes/BottomBoundary.gd" id="7_huru0"]
+[ext_resource type="PackedScene" uid="uid://bhuenfsqoxwpe" path="res://scenes/ObjectiveArea.tscn" id="7_xum0q"]
+[ext_resource type="Script" uid="uid://x2rdmjyr1ttw" path="res://scenes/ObjectiveArea.gd" id="8_huru0"]
+[ext_resource type="PackedScene" uid="uid://dm4pvnxrbtxur" path="res://scenes/Back.tscn" id="9_wcvik"]
 
-[sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(138.75, 79)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xum0q"]
+size = Vector2(1756, 127)
 
 [node name="MainLevel" type="Node" unique_id=832108525]
 
+[node name="background" parent="." unique_id=2087602968 instance=ExtResource("9_wcvik")]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = -4.0
+offset_bottom = -4.0
+
+[node name="BlueShip" parent="." unique_id=1604795049 instance=ExtResource("2")]
+position = Vector2(85, 473)
+script = ExtResource("4_ykko5")
+
 [node name="PlatformBlue" type="Node2D" parent="." unique_id=1028510209]
-position = Vector2(35, 565)
+position = Vector2(35, 574.00006)
+rotation = 0.05197559
+scale = Vector2(0.56396216, 0.90838826)
 script = ExtResource("3")
 
-[node name="StonePlatform" parent="PlatformBlue" unique_id=964098601 instance=ExtResource("1")]
+[node name="StonePlatform3" parent="PlatformBlue" unique_id=1290793769 instance=ExtResource("1")]
+position = Vector2(-32.92866, 412.23605)
+rotation = -0.039949056
+scale = Vector2(2.5567849, 1.8826537)
 
-[node name="StonePlatform2" parent="PlatformBlue" unique_id=1594265889 instance=ExtResource("1")]
-position = Vector2(70, 0)
+[node name="StonePlatform4" parent="PlatformBlue" unique_id=1039067682 instance=ExtResource("1")]
+position = Vector2(494.39844, 390.76385)
+rotation = -0.039949056
+scale = Vector2(2.5567849, 1.8826537)
 
-[node name="BlueShip" parent="." unique_id=150247224 instance=ExtResource("2")]
-position = Vector2(72.7009, 421.901)
-lock_rotation = true
+[node name="StonePlatform6" parent="PlatformBlue" unique_id=1405226207 instance=ExtResource("1")]
+position = Vector2(1021.91003, 371.49023)
+rotation = -0.039949056
+scale = Vector2(2.5567849, 1.8826537)
 
-[node name="ObjectiveArea" type="Area2D" parent="." unique_id=779178061]
-script = ExtResource("4")
+[node name="StonePlatform7" parent="PlatformBlue" unique_id=1230353348 instance=ExtResource("1")]
+position = Vector2(2045.4994, 339.59628)
+rotation = -0.039949056
+scale = Vector2(2.5567849, 1.8826537)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea" unique_id=670694693]
-position = Vector2(70.625, 40)
-shape = SubResource("1")
+[node name="StonePlatform8" parent="PlatformBlue" unique_id=881372625 instance=ExtResource("1")]
+position = Vector2(2567.325, 316.12857)
+rotation = -0.039949056
+scale = Vector2(2.5567849, 1.8826537)
 
-[connection signal="body_entered" from="ObjectiveArea" to="ObjectiveArea" method="_on_ObjectiveArea_body_entered"]
+[node name="PlatformBlue2" type="Node2D" parent="." unique_id=149983391]
+position = Vector2(1016.9999, 78)
+rotation = 0.05197559
+scale = Vector2(0.56396216, 0.90838826)
+script = ExtResource("3")
+
+[node name="StonePlatform3" parent="PlatformBlue2" unique_id=1606171403 instance=ExtResource("1")]
+position = Vector2(-1805.8618, 104.622986)
+rotation = -0.039949056
+scale = Vector2(2.5567849, 1.8826537)
+
+[node name="StonePlatform4" parent="PlatformBlue2" unique_id=2098844202 instance=ExtResource("1")]
+position = Vector2(-1276.6766, 84.22473)
+rotation = -0.039949056
+scale = Vector2(2.5567849, 1.8826537)
+
+[node name="StonePlatform6" parent="PlatformBlue2" unique_id=2115506918 instance=ExtResource("1")]
+position = Vector2(-749.3497, 62.75251)
+rotation = -0.039949056
+scale = Vector2(2.5567849, 1.8826537)
+
+[node name="StonePlatform7" parent="PlatformBlue2" unique_id=1596979488 instance=ExtResource("1")]
+position = Vector2(287.0088, 34.82392)
+rotation = -0.039949056
+scale = Vector2(2.5567849, 1.8826537)
+
+[node name="StonePlatform8" parent="PlatformBlue2" unique_id=22234055 instance=ExtResource("1")]
+position = Vector2(814.28076, 12.014821)
+rotation = -0.039949056
+scale = Vector2(2.5567849, 1.8826537)
+
+[node name="Meteor" parent="." unique_id=1733473080 instance=ExtResource("6_xum0q")]
+position = Vector2(676, 201)
+
+[node name="Meteor" parent="Meteor" unique_id=1061646946 instance=ExtResource("6_xum0q")]
+position = Vector2(638, 495)
+
+[node name="Meteor" parent="Meteor/Meteor" unique_id=201284784 instance=ExtResource("6_xum0q")]
+position = Vector2(-638, 51)
+
+[node name="Meteor2" parent="." unique_id=17485195 instance=ExtResource("6_xum0q")]
+position = Vector2(1236, 238)
+
+[node name="Meteor2" parent="Meteor2" unique_id=133685513 instance=ExtResource("6_xum0q")]
+position = Vector2(87, 171)
+
+[node name="Meteor3" parent="." unique_id=1561035910 instance=ExtResource("6_xum0q")]
+position = Vector2(590, 432)
+
+[node name="Meteor4" parent="." unique_id=828220249 instance=ExtResource("6_xum0q")]
+position = Vector2(946, 224)
+
+[node name="Meteor" parent="Meteor4" unique_id=486414605 instance=ExtResource("6_xum0q")]
+position = Vector2(614, 332)
+
+[node name="Meteor" parent="Meteor4/Meteor" unique_id=1139394233 instance=ExtResource("6_xum0q")]
+position = Vector2(-452, 54)
+
+[node name="BottomBoundary" type="Area2D" parent="." unique_id=871587285]
+position = Vector2(17, 22)
+script = ExtResource("7_huru0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBoundary" unique_id=484835059]
+position = Vector2(881, 984)
+shape = SubResource("RectangleShape2D_xum0q")
+
+[node name="ObjectiveArea2" parent="." unique_id=61216122 instance=ExtResource("7_xum0q")]
+position = Vector2(1633, 137)
+scale = Vector2(2, 2)
+script = ExtResource("8_huru0")
+
+[node name="BottomBoundary2" type="Area2D" parent="." unique_id=1253488888]
+position = Vector2(17, 22)
+script = ExtResource("7_huru0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBoundary2" unique_id=1741009633]
+position = Vector2(897, -73)
+shape = SubResource("RectangleShape2D_xum0q")
+
+[connection signal="body_entered" from="Meteor" to="BlueShip" method="_on_meteor_body_entered"]
+[connection signal="body_entered" from="BottomBoundary" to="BottomBoundary" method="_on_body_entered"]
+[connection signal="body_entered" from="BottomBoundary2" to="BottomBoundary2" method="_on_body_entered"]
